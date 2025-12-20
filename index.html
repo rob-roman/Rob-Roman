@@ -5,91 +5,255 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Rob Roman – Diesel Titan</title>
 
-  <link rel="stylesheet" href="style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    html, body { height:100%; }
+    body {
+      font-family: 'Roboto', sans-serif;
+      background:#0b0d10;
+      color:#e6e6e6;
+      scroll-behavior:smooth;
+    }
+
+    /* Make sure the canvas can NEVER block clicks or cover content */
+    #particles{
+      position:fixed;
+      inset:0;
+      z-index:-1;
+      pointer-events:none;
+    }
+
+    .hero{
+      min-height:100vh;
+      display:grid;
+      place-items:center;
+      text-align:center;
+      background: radial-gradient(circle at top, #151922, #050608);
+    }
+    .container{ max-width:900px; padding:2rem; }
+
+    .glitch{
+      font-family:'Orbitron', sans-serif;
+      font-size: clamp(3rem, 8vw, 5rem);
+      position:relative;
+      text-transform:uppercase;
+      letter-spacing:4px;
+    }
+    .glitch::before,
+    .glitch::after{
+      content: attr(data-text);
+      position:absolute;
+      left:0;
+      width:100%;
+      opacity:.8;
+    }
+    .glitch::before{
+      color:#00f6ff;
+      animation: glitch 2s infinite linear alternate-reverse;
+    }
+    .glitch::after{
+      color:#ff003c;
+      animation: glitch 1.5s infinite linear alternate;
+    }
+    @keyframes glitch{
+      0%{transform:translate(0)}
+      20%{transform:translate(-2px,2px)}
+      40%{transform:translate(2px,-2px)}
+      60%{transform:translate(-1px,1px)}
+      80%{transform:translate(1px,-1px)}
+      100%{transform:translate(0)}
+    }
+
+    .tagline{ margin:1rem 0 2rem; font-weight:300; letter-spacing:1px; }
+
+    .btn{
+      display:inline-block;
+      padding:.75rem 1.5rem;
+      border:1px solid #00f6ff;
+      color:#00f6ff;
+      text-decoration:none;
+      text-transform:uppercase;
+      letter-spacing:2px;
+      transition:.3s;
+      background: transparent;
+      cursor:pointer;
+    }
+    .btn:hover{ background:#00f6ff; color:#000; }
+
+    .section{
+      padding:4rem 2rem;
+      max-width:1000px;
+      margin:auto;
+    }
+    .section h2{
+      font-family:'Orbitron', sans-serif;
+      margin-bottom:2rem;
+      text-align:center;
+    }
+
+    .skills-list{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(180px, 1fr));
+      gap:1rem;
+      list-style:none;
+    }
+    .skills-list li{
+      background:#121520;
+      padding:1rem;
+      text-align:center;
+      border-left:3px solid #00f6ff;
+    }
+
+    .timeline{ display:grid; gap:2rem; }
+    .event{
+      background:#121520;
+      padding:1.5rem;
+      border-left:4px solid #ff003c;
+    }
+    .event h3{ font-family:'Orbitron', sans-serif; margin-bottom:.5rem; }
+    .event::before{ content: attr(data-year); font-size:.8rem; color:#888; display:block; margin-bottom:.5rem; }
+
+    form{ display:grid; gap:1rem; }
+    input, textarea{
+      background:#0b0d10;
+      border:1px solid #333;
+      padding:.75rem;
+      color:#fff;
+    }
+    textarea{ min-height:120px; }
+
+    .contact-badges{
+      margin-top:2rem;
+      display:flex;
+      flex-direction:column;
+      gap:.5rem;
+      text-align:center;
+    }
+    .contact-badges a{ color:#00f6ff; text-decoration:none; }
+    .contact-badges a:hover{ text-decoration:underline; }
+
+    footer{
+      text-align:center;
+      padding:1rem;
+      font-size:.8rem;
+      color:#666;
+    }
+  </style>
 </head>
+
 <body>
   <canvas id="particles"></canvas>
 
-  <header class="hero" role="banner">
+  <header class="hero">
     <div class="container">
       <h1 class="glitch" data-text="Rob Roman">Rob Roman</h1>
-      <p class="tagline">Technician · Metals Fabrication · 24/7 Mobile Rescue</p>
+      <p class="tagline">Fleet Surgeon · Metal Alchemist · 24/7 Mobile Rescue</p>
       <a href="#contact" class="btn">Haul Me In</a>
     </div>
   </header>
 
-  <main>
-    <section id="skills" class="section">
-      <h2>Tool Arsenal</h2>
-      <ul class="skills-list">
-        <li>Cummins INSITE</li>
-        <li>Eaton ServiceRanger</li>
-        <li>Bendix ACOM</li>
-        <li>MIG / ARC / TIG</li>
-        <li>Plasma Cutting</li>
-        <li>Fabrication</li>
-        <li>Ultrashift / Endurant</li>
-        <li>DD13 / ISX15</li>
-        <li>OSHA 10</li>
-      </ul>
-    </section>
+  <section id="skills" class="section">
+    <h2>Tool Arsenal</h2>
+    <ul class="skills-list">
+      <li>Cummins INSITE</li><li>Eaton ServiceRanger</li><li>Bendix ACOM</li>
+      <li>MIG / ARC / TIG</li><li>Plasma Cutting</li><li>Fabrication</li>
+      <li>Ultrashift / Endurant</li><li>DD13 / ISX15</li><li>OSHA 10</li>
+    </ul>
+  </section>
 
-    <section id="timeline" class="section">
-      <h2>War Record</h2>
-      <div class="timeline">
-        <div class="event" data-year="2021–25">
-          <h3>FedEx Freight – Fleet Maintenance Titan</h3>
-          <p>Kept 300+ Class-8 wolves alive: engines, transmissions, air systems, doors, diffs.</p>
-        </div>
-
-        <div class="event" data-year="2019–21">
-          <h3>Fred Martin Ford – Flat-Rate Gunslinger</h3>
-          <p>Gas &amp; diesel cars / medium-duty. Zero comebacks.</p>
-        </div>
-
-        <div class="event" data-year="2018–19">
-          <h3>Boardman Twp – Public-Safety Guardian</h3>
-          <p>Fabricated custom rigs for police &amp; fire. Downtime = 0.</p>
-        </div>
-
-        <div class="event" data-year="2015–18">
-          <h3>Taylor Kia – From Lube to A-level Tech</h3>
-          <p>Climbed the rack in a high-volume dealership.</p>
-        </div>
-
-        <div class="event" data-year="2015–∞">
-          <h3>Self-Employed – Mobile Diesel Mercenary</h3>
-          <p>Midnight rescues, on-site welding, customers for life.</p>
-        </div>
+  <section id="timeline" class="section">
+    <h2>War Record</h2>
+    <div class="timeline">
+      <div class="event" data-year="2021-25">
+        <h3>FedEx Freight – Fleet Maintenance Titan</h3>
+        <p>Kept 300+ Class-8 wolves alive: engines, transmissions, air systems, doors, diffs.</p>
       </div>
-    </section>
-
-    <section id="contact" class="section">
-      <h2>Light the Beacon</h2>
-
-      <!-- Replace the action URL with your real Formspree endpoint -->
-      <form action="https://formspree.io/f/your-form-id" method="POST">
-        <input type="text" name="name" placeholder="Your Name" autocomplete="name" required />
-        <input type="email" name="email" placeholder="Your Email" autocomplete="email" required />
-        <textarea name="message" placeholder="What broke?" required></textarea>
-        <button class="btn" type="submit">Send S.O.S.</button>
-      </form>
-
-      <div class="contact-badges">
-        <a href="mailto:ytowndown616@gmail.com">📧 ytowndown616@gmail.com</a>
-        <a href="tel:3303330016">📞 330-333-0016</a>
-        <span>📍 Youngstown, OH — Will travel</span>
+      <div class="event" data-year="2019-21">
+        <h3>Fred Martin Ford – Flat-Rate Gunslinger</h3>
+        <p>Gas &amp; diesel cars / medium-duty. Zero comebacks.</p>
       </div>
-    </section>
-  </main>
+      <div class="event" data-year="2018-19">
+        <h3>Boardman Twp – Public-Safety Guardian</h3>
+        <p>Fabricated custom rigs for police &amp; fire. Downtime = 0.</p>
+      </div>
+      <div class="event" data-year="2015-18">
+        <h3>Taylor Kia – From Lube to A-level Tech</h3>
+        <p>Climbed the rack in a high-volume dealership.</p>
+      </div>
+      <div class="event" data-year="2015-∞">
+        <h3>Self-Employed – Mobile Diesel Mercenary</h3>
+        <p>Midnight rescues, on-site welding, customers for life.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+    <h2>Light the Beacon</h2>
+    <form action="https://formspree.io/f/your-form-id" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" placeholder="What broke?" required></textarea>
+      <button class="btn" type="submit">Send S.O.S.</button>
+    </form>
+
+    <div class="contact-badges">
+      <a href="mailto:ytowndown616@gmail.com">📧 ytowndown616@gmail.com</a>
+      <a href="tel:3303330016">📞 330-333-0016</a>
+      <span>📍 Youngstown, OH — Will travel</span>
+    </div>
+  </section>
 
   <footer>
     <p>&copy; <span id="year"></span> Rob Roman — Built with diesel &amp; midnight oil</p>
   </footer>
 
-  <script src="script.js"></script>
+  <script>
+    // Footer year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Particles
+    const canvas = document.getElementById("particles");
+    const ctx = canvas.getContext("2d");
+
+    let w, h;
+    function resize() {
+      w = canvas.width = window.innerWidth;
+      h = canvas.height = window.innerHeight;
+    }
+    window.addEventListener("resize", resize);
+    resize();
+
+    const particles = Array.from({ length: 80 }, () => ({
+      x: Math.random() * w,
+      y: Math.random() * h,
+      vx: (Math.random() - 0.5) * 0.4,
+      vy: (Math.random() - 0.5) * 0.4,
+      r: Math.random() * 2 + 1
+    }));
+
+    function animate() {
+      ctx.clearRect(0, 0, w, h);
+      ctx.fillStyle = "#00f6ff";
+
+      for (const p of particles) {
+        p.x += p.vx;
+        p.y += p.vy;
+
+        if (p.x < 0 || p.x > w) p.vx *= -1;
+        if (p.y < 0 || p.y > h) p.vy *= -1;
+
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fill();
+      }
+
+      requestAnimationFrame(animate);
+    }
+    animate();
+  </script>
 </body>
 </html>
