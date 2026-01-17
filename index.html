@@ -1,128 +1,337 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rob Roman – Repair Shop</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Mobile diagnosis, repair, maintenance, and welding/fabrication for cars, trucks, motorcycles, and heavy equipment." />
+  <meta name="theme-color" content="#0b0f14" />
+  <title>Rob Roman | Diagnosis • Repair • Maintenance • Welding/Fabrication</title>
+
+  <!-- Optional favicon -->
+  <!-- <link rel="icon" href="assets/favicon.png" /> -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Oswald:wght@500;600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet" />
+
+  <!-- LocalBusiness schema (edit details) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AutoRepair",
+    "name": "Rob Roman",
+    "description": "Mobile diagnosis, repair, maintenance, and welding/fabrication for cars, trucks, motorcycles, and heavy equipment.",
+    "areaServed": "Youngstown, OH and surrounding areas",
+    "telephone": "+1-330-333-0016",
+    "priceRange": "$$"
+  }
+  </script>
 </head>
 
 <body>
-  <header class="hero" id="top">
-    <!-- Sparks/arc overlay (parallax) -->
-    <canvas id="sparks" aria-hidden="true"></canvas>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-    <div class="hero-overlay" aria-hidden="true"></div>
-
-    <div class="container">
-      <div class="badge">Youngstown, OH • Will travel</div>
-      <h1 class="title">Rob Roman</h1>
-      <p class="tagline">Old-school repair. Modern diagnostics. Midnight rescues.</p>
-
-      <div class="cta-row">
-        <a href="#contact" class="btn">Request Service</a>
-        <a href="#timeline" class="btn btn-ghost">See Experience</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">RR</div>
+        <div class="brand-text">
+          <div class="brand-name">Rob Roman</div>
+          <div class="brand-tag">Diagnosis • Repair • Maintenance • Welding/Fabrication</div>
+        </div>
       </div>
+
+      <nav class="nav" aria-label="Primary">
+        <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu">
+          <span class="nav-toggle-lines" aria-hidden="true"></span>
+          <span class="sr-only">Open menu</span>
+        </button>
+
+        <div class="nav-menu" id="navMenu">
+          <a href="#services">Services</a>
+          <a href="#equipment">Vehicles</a>
+          <a href="#welding">Welding</a>
+          <a href="#process">How it works</a>
+          <a href="#contact" class="btn btn-sm">Request service</a>
+        </div>
+      </nav>
     </div>
   </header>
 
-  <main>
-    <section id="skills" class="section">
-      <div class="section-head">
-        <h2>Tool Arsenal</h2>
-        <p>Diagnostics, fabrication, and on-site repair — built for real work.</p>
-      </div>
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero" aria-label="Hero">
+      <!-- Background image set in CSS: .hero { background-image: ... } -->
+      <div class="hero-overlay" aria-hidden="true"></div>
+      <div class="hero-grain" aria-hidden="true"></div>
 
-      <ul class="skills-list">
-        <li>Cummins INSITE</li>
-        <li>Eaton ServiceRanger</li>
-        <li>Bendix ACOM</li>
-        <li>MIG Welding</li>
-        <li>Plasma Cutting</li>
-        <li>Fabrication</li>
-        <li>Ultrashift / Endurant</li>
-        <li>DD13 / ISX15</li>
-        <li>OSHA 10</li>
-      </ul>
-    </section>
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="hero-kicker">Mobile • On-site • Roadside (as available)</p>
+          <h1>
+            Vintage-shop grit.
+            <span class="accent">Modern diagnostics.</span>
+            Real repairs.
+          </h1>
 
-    <section id="timeline" class="section">
-      <div class="section-head">
-        <h2>Shop History</h2>
-        <p>A timeline of work that kept fleets moving and customers safe.</p>
-      </div>
+          <p class="lead">
+            Cars, trucks, motorcycles, fleet vehicles, and heavy equipment—plus welding & fabrication.
+            Straight answers, professional workmanship, and service you can count on.
+          </p>
 
-      <div class="timeline">
-        <article class="event" data-year="2021–25">
-          <h3>FedEx Freight — Fleet Maintenance Technician</h3>
-          <p>Preventative maintenance and repairs across engines, transmissions, air systems, doors, diffs, and electrical.</p>
-        </article>
+          <div class="hero-actions">
+            <a class="btn" href="#contact">Get a quote</a>
+            <a class="btn btn-ghost" href="#services">See services</a>
+          </div>
 
-        <article class="event" data-year="2019–21">
-          <h3>Fred Martin Ford — Flat-Rate Technician</h3>
-          <p>Gas &amp; diesel cars / medium-duty. Clean work, clean outcomes.</p>
-        </article>
-
-        <article class="event" data-year="2018–19">
-          <h3>Boardman Township — Public Safety Fleet</h3>
-          <p>Built and repaired service rigs for police &amp; fire. Downtime wasn’t an option.</p>
-        </article>
-
-        <article class="event" data-year="2015–18">
-          <h3>Taylor Kia — From Lube to A-Level</h3>
-          <p>High-volume shop. Learned fast, fixed right, moved up.</p>
-        </article>
-
-        <article class="event" data-year="2015–Present">
-          <h3>Independent — Mobile Repair &amp; Welding</h3>
-          <p>On-site repairs, welding, and recovery support. Night calls welcome when it’s urgent.</p>
-        </article>
-      </div>
-    </section>
-
-    <section id="contact" class="section">
-      <div class="section-head">
-        <h2>Contact</h2>
-        <p>Tell me what’s going on. I’ll get back to you quick.</p>
-      </div>
-
-      <!-- Replace with your real Formspree endpoint -->
-      <form class="contact-form" action="https://formspree.io/f/your-form-id" method="POST">
-        <div class="grid">
-          <label>
-            <span>Name</span>
-            <input type="text" name="name" placeholder="Your name" required />
-          </label>
-
-          <label>
-            <span>Email</span>
-            <input type="email" name="email" placeholder="you@email.com" required />
-          </label>
+          <div class="hero-stats" role="list" aria-label="Highlights">
+            <div class="stat" role="listitem">
+              <div class="stat-title">Diagnostics</div>
+              <div class="stat-sub">Troubleshooting, scan data, electrical</div>
+            </div>
+            <div class="stat" role="listitem">
+              <div class="stat-title">Repair</div>
+              <div class="stat-sub">Brakes, steering, suspension, leaks</div>
+            </div>
+            <div class="stat" role="listitem">
+              <div class="stat-title">Welding/Fab</div>
+              <div class="stat-sub">Repairs, brackets, reinforcements</div>
+            </div>
+          </div>
         </div>
 
-        <label>
-          <span>Message</span>
-          <textarea name="message" placeholder="What broke? Where are you located? What’s the truck doing?" required></textarea>
-        </label>
+        <aside class="hero-card" aria-label="Request Service">
+          <div class="card poster">
+            <div class="poster-top">
+              <div class="poster-badge">Now Booking</div>
+              <div class="poster-title">Request Service</div>
+              <div class="poster-sub">Describe the issue and your vehicle/equipment. I’ll respond ASAP.</div>
+            </div>
 
-        <button class="btn" type="submit">Send</button>
-      </form>
+            <!-- Formspree: replace action with your endpoint -->
+            <form class="form" action="https://formspree.io/f/yourFormID" method="POST">
+              <div class="grid-2">
+                <label>
+                  Name
+                  <input name="name" type="text" autocomplete="name" required />
+                </label>
+                <label>
+                  Phone
+                  <input name="phone" type="tel" autocomplete="tel" required />
+                </label>
+              </div>
 
-      <div class="contact-badges">
-        <a href="mailto:ytowndown616@gmail.com">📧 ytowndown616@gmail.com</a>
-        <a href="tel:3303330016">📞 330-333-0016</a>
-        <span>🧰 Mobile service • Welding • Diagnostics</span>
+              <label>
+                Email (optional)
+                <input name="email" type="email" autocomplete="email" />
+              </label>
+
+              <div class="grid-2">
+                <label>
+                  Vehicle / Equipment
+                  <input name="unit" type="text" placeholder="e.g., F-550, skid steer, Harley" required />
+                </label>
+                <label>
+                  Service Type
+                  <select name="serviceType" required>
+                    <option value="" disabled selected>Select one</option>
+                    <option>Diagnosis</option>
+                    <option>Repair</option>
+                    <option>Maintenance</option>
+                    <option>Welding/Fabrication</option>
+                    <option>Inspection</option>
+                    <option>Other</option>
+                  </select>
+                </label>
+              </div>
+
+              <label>
+                What’s going on?
+                <textarea name="message" rows="4" placeholder="Symptoms, noises, codes, leaks, when it happens, etc." required></textarea>
+              </label>
+
+              <button class="btn btn-block" type="submit">Send request</button>
+
+              <p class="fineprint">
+                Prefer to call/text?
+                <a href="tel:+13303330016">Call</a>
+                •
+                <a href="sms:+13303330016">Text</a>
+              </p>
+            </form>
+          </div>
+        </aside>
+      </div>
+
+      <!-- subtle spark particles (pure CSS + JS toggle) -->
+      <div class="sparks" aria-hidden="true" id="sparks"></div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-head">
+          <h2>Services</h2>
+          <p>Automotive, powersports, fleet, and equipment work—done correctly, with clear communication.</p>
+        </div>
+
+        <div class="cards">
+          <article class="card">
+            <h3>Diagnostics</h3>
+            <ul class="bullets">
+              <li>Check engine / warning lights</li>
+              <li>Electrical troubleshooting</li>
+              <li>No-start, stalling, drivability</li>
+              <li>Inspections & pre-purchase checks</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Repair</h3>
+            <ul class="bullets">
+              <li>Brakes, steering, suspension</li>
+              <li>Cooling system, leaks, hoses/belts</li>
+              <li>Starting/charging systems</li>
+              <li>General mechanical repairs</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Maintenance</h3>
+            <ul class="bullets">
+              <li>Oil service & fluid checks</li>
+              <li>Filters, batteries, basic tune-ups</li>
+              <li>Preventive maintenance schedules</li>
+              <li>Fleet readiness checks</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- VEHICLES / EQUIPMENT -->
+    <section class="section alt" id="equipment">
+      <div class="container">
+        <div class="section-head">
+          <h2>Vehicles & Equipment</h2>
+          <p>One shop approach—multiple platforms.</p>
+        </div>
+
+        <div class="pill-grid">
+          <span class="pill">Cars & SUVs</span>
+          <span class="pill">Trucks (light/medium)</span>
+          <span class="pill">Diesel</span>
+          <span class="pill">Motorcycles</span>
+          <span class="pill">Trailers</span>
+          <span class="pill">Fleet vehicles</span>
+          <span class="pill">Skid steers / loaders</span>
+          <span class="pill">Small equipment</span>
+          <span class="pill">Jobsite repairs (as available)</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- WELDING -->
+    <section class="section" id="welding">
+      <div class="container">
+        <div class="section-head">
+          <h2>Welding & Fabrication</h2>
+          <p>Functional repairs and clean fabrication—built to work, not just look good.</p>
+        </div>
+
+        <div class="two-col">
+          <div class="card">
+            <h3>Common welding work</h3>
+            <ul class="bullets">
+              <li>Crack repairs and reinforcements</li>
+              <li>Brackets, tabs, mounts</li>
+              <li>Exhaust patches (case-by-case)</li>
+              <li>Trailer and hitch-related repairs</li>
+            </ul>
+            <p class="note">If you can send photos, include them with your request for faster estimates.</p>
+          </div>
+
+          <div class="card">
+            <h3>What I need to quote accurately</h3>
+            <ul class="bullets">
+              <li>Material type/thickness (if known)</li>
+              <li>Access to the repair area</li>
+              <li>Photos and dimensions</li>
+              <li>Time constraints / urgency</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section class="section alt" id="process">
+      <div class="container">
+        <div class="section-head">
+          <h2>How it works</h2>
+          <p>Simple, direct, and documented.</p>
+        </div>
+
+        <ol class="steps">
+          <li class="step">
+            <div class="step-num">1</div>
+            <div class="step-body">
+              <div class="step-title">Request service</div>
+              <div class="step-text">Tell me the vehicle/equipment, symptoms, and location.</div>
+            </div>
+          </li>
+          <li class="step">
+            <div class="step-num">2</div>
+            <div class="step-body">
+              <div class="step-title">Confirm scope</div>
+              <div class="step-text">We align on diagnostics/repair plan and estimated time.</div>
+            </div>
+          </li>
+          <li class="step">
+            <div class="step-num">3</div>
+            <div class="step-body">
+              <div class="step-title">Work & wrap-up</div>
+              <div class="step-text">Repair completed, recommendations provided, and next steps noted.</div>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section-head">
+          <h2>Contact</h2>
+          <p>Fastest response: call/text. You can also use the request form above.</p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="card">
+            <h3>Call / Text</h3>
+            <p class="contact-line">
+              <a href="tel:+13303330016" class="contact-cta">+1 (330) 333-0016</a>
+            </p>
+            <p class="fineprint">If I miss you, leave a short voicemail or text with your vehicle and issue.</p>
+          </div>
+
+          <div class="card">
+            <h3>Service area</h3>
+            <p class="fineprint">Youngstown, OH and surrounding areas (mobile service based on job type).</p>
+            <div class="divider"></div>
+            <p class="fineprint"><strong>Hours:</strong> By appointment</p>
+          </div>
+        </div>
+
+        <footer class="site-footer">
+          <div class="fineprint">© <span id="year"></span> Rob Roman. All rights reserved.</div>
+          <div class="fineprint">Diagnosis • Repair • Maintenance • Welding/Fabrication</div>
+        </footer>
       </div>
     </section>
   </main>
-
-  <footer class="footer">
-    <p>&copy; <span id="year"></span> Rob Roman — Built with grease, grit, and pride</p>
-  </footer>
 
   <script src="script.js"></script>
 </body>
